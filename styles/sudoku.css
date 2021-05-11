@@ -1,0 +1,112 @@
+/* add your styling and layout CSS here */
+
+*{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size:33px;
+}
+
+body{
+    margin: 0;
+}
+
+input[type=text]{
+    border: 0;
+    padding: 1px;
+
+    height: 60px;
+    width: 60px; 
+    background:transparent;
+}
+
+.board{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+.board td{
+    border: 1px solid #000000;
+    padding: 1px;
+    /* border-collapse: collapse; */
+
+    height: 48px;
+    width: 48px;
+}
+
+.board td:first-child{
+    border-left: 3px solid #000000;
+}
+.board td:nth-child(3n){
+    border-right: 3px solid #000000;
+}
+.board tr:first-child{
+    border-top: 3px solid #000000;
+}
+.board tr:nth-child(3n){
+    border-bottom: 3px solid #000000;
+}
+
+.board td:hover{
+   background-color:#f5dd90;
+}
+
+/* pallette */
+.pallette{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: auto;
+
+    border-collapse: collapse;
+}
+.pallette td{
+    border: 1px solid black;
+    padding:0;
+
+    width: 60px;
+    height:60px;
+}
+.pallette img{
+    height: auto;
+    width: auto;
+}
+.pallette td:hover{
+    background-color:#f5dd90;
+}
+
+.error{
+    background-color: red;
+}
+.user-input{
+    background-color:aqua;
+}
+
+/* nav bar */
+.navbar-item {
+    
+    /* color:bla; */
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size: 45px; */
+
+}
+
+/* highscore table */
+.columns *{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}
+.columns .table tbody tr td{
+    font-size: 25px;
+    border-top: 0;
+    border-bottom: 0;
+}
+.columns tbody tr:hover{
+    background-color:#f5dd90;
+}

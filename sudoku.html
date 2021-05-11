@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sudoku - Play a Game</title>
+        <!-- reference your stylesheet here -->
+        
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+        
+        <!-- reference your source code here -->
+
+        <script src="scripts/mobile_menu.js"></script>
+        <script src="scripts/sudoku.js"></script>
+        <link rel="stylesheet" href="styles/sudoku.css"/>
+
+    </head>
+    <body>
+        <!-- bulma content -->
+        <nav id="navBar" class="navbar is-dark" role="navigation" aria-label="main navigation">
+            <!-- <div class="container"> -->
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="sudoku.html">
+                        <!-- insert image here -->
+                        <img src="../images/logo.gif">
+                    </a>
+                    <a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <!-- <span class="navbar-burger burger" data-target="navbarBasicExample"> -->
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    <!-- </span> -->
+                    </a>
+                </div>
+
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <!-- <p class="has-text-weight-light"></p> -->
+                        <a class="navbar-item is-size-4" href="sudoku.html">Sudoku Centre</a>
+                        <!-- <a class="navbar-item is-active" href="#"><p class="is-family-primary">Sudoku Centre</p></a> -->
+                        <a class="navbar-item is-size-4" href="sudoku.html">Play Game</a>
+                        <a class="navbar-item is-size-4" href="high_scores.html">High Scores</a>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </nav>
+        <!-- <script type="text/javascript">
+            (function(){
+                var burger = document.querySelector('.burger');
+                var nav = document.querySelector('#'+burger.dataset.target);
+
+                burger.addEventListener('click', fucntion(){
+                    burger.classList.toggle('is-active');
+                    nav.classList.toggle('is-active');
+                });
+            })();
+        </script> -->
+
+        <!-- your content goes here -->
+        <!-- <table class="board">
+            <tr class="row">
+                <td><input id="cell-1" type="text" maxlength=1></td>
+                <td>1</td>
+                <td><input id="cell-3" type="text" maxlength=1></td>
+                <td><input id="cell-4" type="text" maxlength=1></td>
+                <td><input id="cell-5" type="text" maxlength=1></td>
+                <td><input id="cell-6" type="text" maxlength=1></td>
+                <td><input id="cell-7" type="text" maxlength=1></td>
+                <td>9</td>
+                <td><input id="cell-9" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-10" type="text" maxlength=1></td>
+                <td><input id="cell-11" type="text" maxlength=1></td>
+                <td>4</td>
+                <td><input id="cell-13" type="text" maxlength=1></td>
+                <td><input id="cell-14" type="text" maxlength=1></td>
+                <td><input id="cell-15" type="text" maxlength=1></td>
+                <td>2</td>
+                <td><input id="cell-17" type="text" maxlength=1></td>
+                <td><input id="cell-18" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-19" type="text" maxlength=1></td>
+                <td><input id="cell-20" type="text" maxlength=1></td>
+                <td>8</td>
+                <td><input id="cell-22" type="text" maxlength=1></td>
+                <td><input id="cell-23" type="text" maxlength=1></td>
+                <td>5</td>
+                <td><input id="cell-25" type="text" maxlength=1></td>
+                <td><input id="cell-26" type="text" maxlength=1></td>
+                <td><input id="cell-27" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-28" type="text" maxlength=1></td>
+                <td><input id="cell-29" type="text" maxlength=1></td>
+                <td><input id="cell-30" type="text" maxlength=1></td>
+                <td><input id="cell-31" type="text" maxlength=1></td>
+                <td><input id="cell-32" type="text" maxlength=1></td>
+                <td><input id="cell-33" type="text" maxlength=1></td>
+                <td><input id="cell-34" type="text" maxlength=1></td>
+                <td>3</td>
+                <td><input id="cell-36" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td>2</td>
+                <td><input id="cell-38" type="text" maxlength=1></td>
+                <td><input id="cell-39" type="text" maxlength=1></td>
+                <td><input id="cell-40" type="text" maxlength=1></td>
+                <td>4</td>
+                <td><input id="cell-42" type="text" maxlength=1></td>
+                <td>1</td>
+                <td><input id="cell-44" type="text" maxlength=1></td>
+                <td><input id="cell-45" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-46" type="text" maxlength=1></td>
+                <td><input id="cell-47" type="text" maxlength=1></td>
+                <td><input id="cell-48" type="text" maxlength=1></td>
+                <td><input id="cell-49" type="text" maxlength=1></td>
+                <td><input id="cell-50" type="text" maxlength=1></td>
+                <td><input id="cell-51" type="text" maxlength=1></td>
+                <td><input id="cell-52" type="text" maxlength=1></td>
+                <td><input id="cell-53" type="text" maxlength=1></td>
+                <td><input id="cell-54" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-55" type="text" maxlength=1></td>
+                <td><input id="cell-56" type="text" maxlength=1></td>
+                <td>1</td>
+                <td>8</td>
+                <td><input id="cell-59" type="text" maxlength=1></td>
+                <td><input id="cell-60" type="text" maxlength=1></td>
+                <td>6</td>
+                <td><input id="cell-62" type="text" maxlength=1></td>
+                <td><input id="cell-63" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-64" type="text" maxlength=1></td>
+                <td>3</td>
+                <td><input id="cell-66" type="text" maxlength=1></td>
+                <td><input id="cell-67" type="text" maxlength=1></td>
+                <td><input id="cell-68" type="text" maxlength=1></td>
+                <td><input id="cell-69" type="text" maxlength=1></td>
+                <td><input id="cell-70" type="text" maxlength=1></td>
+                <td>8</td>
+                <td><input id="cell-72" type="text" maxlength=1></td>
+            </tr>
+            <tr class="row">
+                <td><input id="cell-73" type="text" maxlength=1></td>
+                <td><input id="cell-74" type="text" maxlength=1></td>
+                <td>6</td>
+                <td><input id="cell-76" type="text" maxlength=1></td>
+                <td><input id="cell-77" type="text" maxlength=1></td>
+                <td><input id="cell-78" type="text" maxlength=1></td>
+                <td><input id="cell-79" type="text" maxlength=1></td>
+                <td><input id="cell-80" type="text" maxlength=1></td>
+                <td><input id="cell-81" type="text" maxlength=1></td>
+            </tr>
+        </table> -->
+        <!-- <div class="board"></div> -->
+        <table class="board" id="board"></table>
+        <!-- <table id = "board"></table> -->
+        <table class="pallette" id="pallette">
+            <tr>
+                <td id="one">1</td>
+                <td id="two">2</td>
+                <td id="three">3</td>
+                <td id="four">4</td>
+                <td id="five">5</td>
+                <td id="six">6</td>
+                <td id="seven">7</td>
+                <td id="eight">8</td>
+                <td id="nine">9</td>
+                <td id="undo"><img src="images/undo.png"></td>
+            </tr>
+        </table>
+        <!-- <div id="pallette" class="pallette">
+            <td id="one">1</p>
+                <p id="two">2</p>
+                <p id="three">3</p>
+                <p id="four">4</p>
+                <p id="five">5</p>
+                <p id="six">6</p>
+                <p id="seven">7</p>
+                <p id="eight">8</p>
+                <p id="nine">9</p>
+                <p id="undo"><img src="images/undo.png"></p>
+        </div> -->
+
+    </body>
+</html>
